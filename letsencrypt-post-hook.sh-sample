@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPTLOC="/root/bin"
+LB_ID="my-lb-id"
+LISTENER_ID="my-listener-id"
+CERTDIR1="/etc/letsencrypt/live/example.com/"
+CERTDIR2="/etc/letsencrypt/live/example.net/"
+
+/etc/init.d/apache2 reload
+
+source $SCRIPTLOC/openrc.sh
+$SCRIPTLOC/openstack-lb-cert-updater.py set-lb-cert --lb $LB_ID --listener $LISTENER_ID --letsencrypt $CERTDIR1 --letsencrypt $CERTDIR2
+
