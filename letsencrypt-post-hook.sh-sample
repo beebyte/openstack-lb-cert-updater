@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Put this script in /etc/letsencrypt/renewal-hooks/post/ and make it executable
+# Modify to suite your needs.
+
 SCRIPTLOC="/root/bin"
 LB_ID="my-lb-id"
 LISTENER_ID="my-listener-id"
